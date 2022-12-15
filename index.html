@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+  <title>Dummy Authentication</title>
+</head>
+<body>
+  <h1>Login</h1>
+  <form id="login-form">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username"><br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password"><br><br>
+    <input type="submit" value="Submit">
+  </form> 
+  <h1>Signup</h1>
+  <form id="signup-form">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username"><br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password"><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+    
+   <audio id="sound"></audio>
+  <div class="container">
+    <div class="search">
+        <input type="text" placeholder="type the word here" id="word_input">
+        <button id="search-btn">search</button>
+    </div>
+  </div>
+  <div class="result" id="result">
+    <div class="word">
+        <h3>sample</h3>
+        <button>
+            <i class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+    <div class="details">
+        <p>pos</p>
+        <p>/sample/</p>
+    </div>
+    <p class="meaning"></p>
+    <p class="example"></p>
+  </div>
+  
+  <script src="js/index.js"></script>
+</body>
+</html>
