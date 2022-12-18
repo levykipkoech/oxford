@@ -33,6 +33,26 @@ document.addEventListener('DOMContentLoaded',()=>{
     // redirect to another page
     window.location.href = "https://www.example.com/";
   });
+  const navItems = document.querySelectorAll("nav li a");
+
+  navItems.forEach(item => {
+    item.addEventListener("click", e => {
+      e.preventDefault();
+      const target = e.target.getAttribute("href");
+      const targetElement = document.querySelector(target);
+      window.history.pushState({}, target, window.location.origin + target);
+      // Update the page content based on the navigation item clicked
+      updatePageContent(target);
+    });
+  });
+
+  function updatePageContent(target) {
+    if (target === "#about") {
+      // Update the page content to display the "About" section
+    } else if (target === "#contact") {
+      // Update the page content to display the "Contact" form
+    }
+  }
 
   const url = "https://api.dictionaryapi.dev/api/v2/entries/en/";
   const result = document.getElementById("result");
