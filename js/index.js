@@ -55,72 +55,44 @@ document.addEventListener('DOMContentLoaded',()=>{
   }
 
   const url = "https://api.dictionaryapi.dev/api/v2/entries/en/";
-  // URL for the dictionary API
+  const result = document.getElementById("result");
+  const sound = document.getElementById("sound");
+  const btn = document.getElementById("search-btn");
 
-const result = document.getElementById("result");
-  // get a reference to the element with id "result"
+  btn.addEventListener("click", () => {
+    let wordInput = document.getElementById("word_input").value;
+    fetch(`${url}${wordInput}`)
+      .then(response => response.json())
+      .then(data => {
+        result.innerHTML = `
+        <div class="word">
+          <h3>${wordInput}</h3>
+          <button onclick = "playSound()">
+            <i class="fa-regular fa-volume"></i>
+          </button>
+        </div>
+        <div class="details">
+          <p>${data[0].meanings[0].partOfSpeech}</p>
+          <p>/${data[0].phonetic}/</p>
+        </div>
+        <p class="meaning">
+          ${data[0].meanings[0].definitions[0].definition}
+        </p>
+        <p class="example">
+          ${data[0].meanings[0].definitions[0].example || ""}
+        </p>
+      `;
+        sound.setAttribute("src", `https:${data[0].phonetics[0].audio}`);
+      })
+      .catch(() => {
+        result.innerHTML = `<h3 class= "error">could Not Find the Word</h3>`;
 
-const sound = document.getElementById("sound");
-  // get a reference to the element with id "sound"
-
-const btn = document.getElementById("search-btn");
-  // get a reference to the element with id "search-btn"
-
-btn.addEventListener("click", () => {
-  // add a click event listener to the "search-btn" element
-
-let wordInput = document.getElementById("word_input").value;
-  // get the value of the element with id "word_input"
-
-fetch(`${url}${wordInput}`)
-  // make a fetch request to the dictionary API with the word input as the endpoint
-
-.then(response => response.json())
-  // parse the response as JSON
-
-.then(data => {
-  // do something with the data
-
-result.innerHTML = `
-  // update the inner HTML of the "result" element with a template literal
-
-<div class="word">
-  <h3>${wordInput}</h3>
-  <button onclick = "playSound()">
-    <i class="fa-regular fa-volume"></i>
-  </button>
-</div>
-<div class="details">
-  <p>${data[0].meanings[0].partOfSpeech}</p>
-  <p>/${data[0].phonetic}/</p>
-</div>
-<p class="meaning">
-  ${data[0].meanings[0].definitions[0].definition}
-</p>
-<p class="example">
-  ${data[0].meanings[0].definitions[0].example || ""}
-</p>
-`;
-  // the template literal contains HTML elements that display the word, part of speech, phonetic spelling, definition, and example sentence (if available)
-
-sound.setAttribute("src", `https:${data[0].phonetics[0].audio}`);
-  // set the "src" attribute of the "sound" element to the URL of the audio pronunciation of the word
-
-})
-
-.catch(() => {
-  // if there is an error with the fetch request
-
-result.innerHTML = `<h3 class= "error">could Not Find the Word</h3>`;
-  // update the inner HTML of the "result" element to display an error message
-
-});
+    });
 });
 
-function playSound() {
-  // define a function to play the audio pronunciation of the word
-
-sound.play();
-  // play the audio by calling the "play" method on the "sound" element
+  function playSound() {
+  sound.play();
 }
-})
+
+
+ })
