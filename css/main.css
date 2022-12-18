@@ -82,7 +82,7 @@ body {
   }
   
   .result {
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: center;
     margin: 20px 0;
@@ -94,27 +94,26 @@ body {
   .word h3 {
     margin: 0;
     font-size: 24px;
-    color: #333;
+    color: rgb(148, 89, 89);
   }
   
   .details {
-    display: flex;
-    align-items: center;
+    display: block;
     justify-content: center;
-    margin: 10px 0;
+    margin: 10px 12px;
   }
   
   .details p {
-    margin: 0;
+    margin: 23px;
     font-size: 18px;
-    color: #333;
-    margin: 0 10px;
+    color: rgb(236, 225, 233);
+    margin: 12px 10px;
   }
   
   .meaning,
   .example {
     font-size: 16px;
-    color: #666;
+    color: rgb(230, 221, 221);
     margin: 10px 0;
   }
   
@@ -127,6 +126,7 @@ body {
   
   .fa-volume-high {
     content: "\f028";
+    display: flex;
   }
   
   
