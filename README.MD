@@ -2,7 +2,7 @@
   Online Dictionary
 
 ## Description
-This is a webb app that displays a couple of movies from the flatrion movie theatre.Using this app you soul be able to purchase some tickets
+This is an online web app that displays meaning of english coplex words
 
 ## Getting Started
 In order for you to use the content on this repo ensure you have the following:
@@ -34,10 +34,10 @@ To use this repo on your machine requires some simple steps
 ## RUNNING THE TESTS 
 
  You do not need to run any tests. After you have cloned and opened the codes in your computer you can directly open it in your browser
- 
+
 ## links
 
-                 https://levykipkoech.github.io/E-Tickets-/
+                 https://levykipkoech.github.io/oxford/
 
 ## Authors 
 Levy 
