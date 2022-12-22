@@ -33,7 +33,8 @@ To use this repo on your machine requires some simple steps
 
 ## RUNNING THE TESTS 
 
- You dont need 
+ You do not need to run any tests. After you have cloned and opened the codes in your computer you can directly open it in your browser
+ 
 ## links
 
                  https://levykipkoech.github.io/E-Tickets-/
